@@ -12,9 +12,6 @@ def reddit_parse_hot(reddit, sub , many):
     hot_posts = what_to_parse.hot(limit = many)
     for post in hot_posts:
         post_url = post.url
-        print(post_url)
-        req = request.Request(post_url, headers = headers)
-        url_opn = request.urlopen(req)
         url_opn_list.append(post_url)
     return url_opn_list
 
@@ -23,9 +20,6 @@ def reddit_parse_time(reddit, sub, many):
     time_posts = what_to_parse.new(limit = many)
     for post in time_posts:
         post_url = post.url
-        print(post_url)
-        req = request.Request(post_url, headers = headers)
-        url_opn = request.urlopen(req)
         url_opn_list.append(post_url)
     return url_opn_list
 
@@ -35,8 +29,5 @@ def random_subreddit(reddit,many):
 	hot_posts = what_to_parse.hot(limit = many)
 	for post in hot_posts:
 	    post_url = post.url
-	    print(post_url)
-	    req = request.Request(post_url, headers = headers)
-	    url_opn = request.urlopen(req)
 	    url_opn_list.append(post_url)
 	return url_opn_list, what_to_parse
